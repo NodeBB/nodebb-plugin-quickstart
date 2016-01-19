@@ -13,7 +13,9 @@
 		"static/style.less"
 	],
 	"scripts": [
-		"static/lib/main.js",
+		"static/lib/main.js"
+	],
+	"acpScripts": [
 		"static/lib/admin.js"
 	],
 	"templates": "static/templates"
