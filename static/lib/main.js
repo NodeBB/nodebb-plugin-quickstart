@@ -1,6 +1,6 @@
 "use strict";
 
-(function() {
+$(document).ready(function() {
 	/*
 		This file shows how client-side javascript can be included via a plugin.
 		If you check `plugin.json`, you'll see that this file is listed under "scripts".
@@ -15,4 +15,4 @@
 
 	console.log('nodebb-plugin-quickstart: loaded');
 	// Note how this is shown in the console on the first load of every page
-}());
+};
