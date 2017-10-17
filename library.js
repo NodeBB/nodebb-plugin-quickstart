@@ -9,9 +9,6 @@ plugin.init = function (params, callback) {
 	var hostMiddleware = params.middleware;
 	var hostControllers = params.controllers;
 
-	// We create two routes for every view. One API call, and the actual route itself.
-	// Just add the buildHeader middleware to your route and NodeBB will take care of everything for you.
-
 	router.get('/admin/plugins/quickstart', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
 	router.get('/api/admin/plugins/quickstart', controllers.renderAdminPage);
 
