@@ -33,6 +33,19 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col-sm-2 col-xs-12 settings-header">Sorted List</div>
+		<div class="col-sm-10 col-xs-12">
+			<div class="form-group" data-type="sorted-list" data-sorted-list="sample-list" data-item-template="admin/plugins/partials/sorted-list/item" data-form-template="admin/plugins/partials/sorted-list/form">
+				<input hidden="text" name="sample-list">
+				<ul data-type="list" class="list-group"></ul>
+				<button type="button" data-type="add" class="btn btn-info">Add Item</button>
+			</div>
+		</div>
+	</div>
+
+	<br />
 </form>
 
 <button id="save" class="floating-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
