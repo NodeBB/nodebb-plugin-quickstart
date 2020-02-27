@@ -14,8 +14,17 @@
 				<label for="setting-2">Setting 2</label>
 				<input type="text" id="setting-2" name="setting-2" title="Setting 2" class="form-control" placeholder="Setting 2">
 			</div>
+
+			<div class="checkbox">
+				<label for="setting-3" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+					<input type="checkbox" class="mdl-switch__input" id="setting-3" name="setting-3">
+					<span class="mdl-switch__label"><strong>Setting 3</strong></span>
+				</label>
+			</div>
 		</div>
 	</div>
+
+	<br />
 
 	<div class="row">
 		<div class="col-sm-2 col-xs-12 settings-header">Colors</div>
@@ -33,6 +42,8 @@
 			</div>
 		</div>
 	</div>
+
+	<br />
 
 	<div class="row">
 		<div class="col-sm-2 col-xs-12 settings-header">Sorted List</div>
