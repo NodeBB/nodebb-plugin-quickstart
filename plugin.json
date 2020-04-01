@@ -10,17 +10,18 @@
 			"hook": "filter:admin.header.build", "method": "addAdminNavigation"
 		}
 	],
-	"staticDirs": {
-		"static": "./static"
+	"modules": {
+		"forum/plugins/quickstart.js": "./static/lib/quickstart.js",
+		"admin/plugins/quickstart.js": "./static/lib/admin.js"
 	},
-	"less": [
-		"static/style.less"
+	"scss": [
+		"static/styles/client.scss"
+	],
+	"acpScss": [
+		"static/styles/admin.scss"
 	],
 	"scripts": [
 		"static/lib/main.js"
-	],
-	"acpScripts": [
-		"static/lib/admin.js"
 	],
 	"templates": "static/templates"
 }

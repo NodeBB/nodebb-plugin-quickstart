@@ -1,21 +1,19 @@
 'use strict';
 
 const controllers = require('./lib/controllers');
+const helpers = require.main.require('./src/routes/helpers');
+const plugin = module.exports;
 
-const plugin = {};
-
-plugin.init = function (params, callback) {
+plugin.init = async function (params) {
 	const router = params.router;
 	const hostMiddleware = params.middleware;
-	// const hostControllers = params.controllers;
+	// Use helpers from core nodebb to create two routes
 
-	// We create two routes for every view. One API call, and the actual route itself.
-	// Just add the buildHeader middleware to your route and NodeBB will take care of everything for you.
+	// public route
+	helpers.setupPageRoute(router, '/quickstart', hostMiddleware, [] /* your custom middlewares */, controllers.renderForumPage);
 
-	router.get('/admin/plugins/quickstart', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
-	router.get('/api/admin/plugins/quickstart', controllers.renderAdminPage);
-
-	callback();
+	// admin route
+	helpers.setupAdminPageRoute(router, '/admin/plugins/quickstart', hostMiddleware, [] /* your custom middlewares */, controllers.renderAdminPage);
 };
 
 plugin.addAdminNavigation = function (header, callback) {
@@ -27,5 +25,3 @@ plugin.addAdminNavigation = function (header, callback) {
 
 	callback(null, header);
 };
-
-module.exports = plugin;
