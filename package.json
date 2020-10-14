@@ -35,7 +35,7 @@
   },
   "readmeFilename": "README.md",
   "nbbpm": {
-    "compatibility": "^1.0.0"
+    "compatibility": "^1.15.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
