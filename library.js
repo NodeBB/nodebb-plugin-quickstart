@@ -1,21 +1,29 @@
 'use strict';
 
+const nconf = require.main.require('nconf');
+const winston = require.main.require('winston');
 const controllers = require('./lib/controllers');
 
 const plugin = {};
 
-plugin.init = function (params, callback) {
-	const router = params.router;
-	const hostMiddleware = params.middleware;
-	// const hostControllers = params.controllers;
+plugin.init = async (params) => {
+	const { router, middleware/* , controllers */ } = params;
+	const routeHelpers = require.main.require('./src/routes/helpers');
 
-	// We create two routes for every view. One API call, and the actual route itself.
-	// Just add the buildHeader middleware to your route and NodeBB will take care of everything for you.
-
-	router.get('/admin/plugins/quickstart', hostMiddleware.admin.buildHeader, controllers.renderAdminPage);
-	router.get('/api/admin/plugins/quickstart', controllers.renderAdminPage);
-
-	callback();
+	/**
+	 * We create two routes for every view. One API call, and the actual route itself.
+	 * Use the `setupPageRoute` helper and NodeBB will take care of everything for you.
+	 *
+	 * Other helpers include `setupAdminPageRoute` and `setupAPIRoute`
+	 * */
+	// routeHelpers.setupPageRoute(router, '/quickstart', middleware, [(req, res, next) => {
+	// 	winston.info(`[plugins/quickstart] In middleware. This argument can be either a single middleware or an array of middlewares`);
+	// 	setImmediate(next);
+	// }], (req, res) => {
+	// 	winston.info(`[plugins/quickstart] Navigated to ${nconf.get('relative_path')}/quickstart`);
+	// 	res.sendStatus(200);	// replace this with res.render('templateName');
+	// });
+	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/quickstart', middleware, [], controllers.renderAdminPage);
 };
 
 /**
