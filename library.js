@@ -37,7 +37,7 @@ plugin.init = async (params) => {
  *
  * To call this example route:
  *   curl -X GET \
- * 		http://example.org/api/v3/plugins/foobar/test \
+ * 		http://example.org/api/v3/plugins/quickstart/test \
  * 		-H "Authorization: Bearer some_valid_bearer_token"
  *
  * Will yield the following response JSON:
