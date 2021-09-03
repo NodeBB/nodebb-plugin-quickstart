@@ -25,5 +25,8 @@
 	"acpScripts": [
 		"static/lib/admin.js"
 	],
+	"modules": {
+		"../client/quickstart.js": "./static/lib/quickstart.js"
+	},
 	"templates": "static/templates"
 }

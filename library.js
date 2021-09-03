@@ -21,8 +21,9 @@ plugin.init = async (params) => {
 		setImmediate(next);
 	}], (req, res) => {
 		winston.info(`[plugins/quickstart] Navigated to ${nconf.get('relative_path')}/quickstart`);
-		res.sendStatus(200);	// replace this with res.render('templateName');
+		res.render('quickstart', { uid: req.uid });
 	});
+
 	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/quickstart', middleware, [], controllers.renderAdminPage);
 };
 
