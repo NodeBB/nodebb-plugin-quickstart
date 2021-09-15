@@ -1,5 +1,5 @@
-// running "npm test" will run tests in this file
-// to run only plugin tests use "mocha test/plugins-installed.js"
+// running "npm test" from NodeBB root folder will run tests in this file
+// to run only plugin tests, use "npx mocha test/plugins-installed.js"
 
 'use strict';
 
