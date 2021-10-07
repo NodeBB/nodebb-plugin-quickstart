@@ -1,14 +1,13 @@
 'use strict';
 
-/* globals $, app, socket, define, config */
-
-define('admin/plugins/quickstart', ['settings', 'uploader', 'admin/modules/colorpicker'], function (settings, uploader, colorpicker) {
+define('admin/plugins/quickstart', ['settings', 'uploader'], function (settings, uploader) {
 	var ACP = {};
 
 	ACP.init = function () {
-		setupColorInputs();
 		setupUploader();
-		settings.load('quickstart', $('.quickstart-settings'));
+		settings.load('quickstart', $('.quickstart-settings'), function () {
+			setupColorInputs();
+		});
 		$('#save').on('click', saveSettings);
 	};
 
@@ -28,7 +27,6 @@ define('admin/plugins/quickstart', ['settings', 'uploader', 'admin/modules/color
 
 	function setupColorInputs() {
 		var colorInputs = $('[data-settings="colorpicker"]');
-		colorpicker.enable(colorInputs, updateColors);
 		colorInputs.on('change', updateColors);
 		updateColors();
 	}

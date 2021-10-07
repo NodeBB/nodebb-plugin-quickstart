@@ -30,15 +30,15 @@
 		<div class="col-sm-2 col-xs-12 settings-header">Colors</div>
 		<div class="col-sm-10 col-xs-12">
 			<p class="alert" id="preview">
-				Here is some preview text. Use the inputs below to modify this alert's appearance. 
+				Here is some preview text. Use the inputs below to modify this alert's appearance.
 			</p>
 			<div class="form-group">
 				<label for="color">Foreground</label>
-				<input data-settings="colorpicker" type="text" id="color" name="color" title="Background Color" class="form-control" placeholder="#ffffff" value="#ffffff" />
+				<input data-settings="colorpicker" type="color" id="color" name="color" title="Background Color" class="form-control" placeholder="#ffffff" value="#ffffff" />
 			</div>
 			<div class="form-group">
 				<label for="bgColor">Background</label>
-				<input data-settings="colorpicker" type="text" id="bgColor" name="bgColor" title="Background Color" class="form-control" placeholder="#000000" value="#000000" />
+				<input data-settings="colorpicker" type="color" id="bgColor" name="bgColor" title="Background Color" class="form-control" placeholder="#000000" value="#000000" />
 			</div>
 		</div>
 	</div>
