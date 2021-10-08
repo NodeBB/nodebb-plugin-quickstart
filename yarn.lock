@@ -828,10 +828,10 @@ eslint-config-airbnb-base@14.2.1:
     object.assign "^4.1.2"
     object.entries "^1.1.2"
 
-eslint-config-nodebb@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-0.0.2.tgz#6605ee7129db7a7b058320d5879591757128f4b3"
-  integrity sha512-FMg9ymyxdRaNIuKh8BH01Cqy5YnabqxnWxIF72IMY0ezOtNBrFdiBHRzsEBH/c0bRhgZGW4vVG7chDXPNsnYdw==
+eslint-config-nodebb@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-0.0.3.tgz#c77ed60d287f9210c967203691a94b6ed0775a6e"
+  integrity sha512-SPAOeA3R3pwjRkPoPGsB+i4lDANWU+7C7Wm14a7TXD2jPS0Pc08BHZRfa2srXIay8EleI3BENqV84EMhi23ZCA==
   dependencies:
     eslint-config-airbnb-base "14.2.1"
 
