@@ -41,7 +41,7 @@
     "@commitlint/cli": "13.2.0",
     "@commitlint/config-angular": "13.2.0",
     "eslint": "7.32.0",
-    "eslint-config-nodebb": "0.0.2",
+    "eslint-config-nodebb": "0.0.3",
     "eslint-plugin-import": "2.24.2",
     "husky": "7.0.2",
     "lint-staged": "11.2.0"
