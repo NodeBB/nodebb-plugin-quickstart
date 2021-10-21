@@ -43,7 +43,7 @@
     "eslint": "8.0.1",
     "eslint-config-nodebb": "0.0.3",
     "eslint-plugin-import": "2.25.2",
-    "husky": "7.0.2",
+    "husky": "7.0.4",
     "lint-staged": "11.2.3"
   }
 }
