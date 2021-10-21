@@ -1,7 +1,7 @@
 {
-  "name": "nodebb-plugin-quickstart",
-  "version": "0.4.2",
-  "description": "A starter kit for quickly creating NodeBB plugins",
+  "name": "nodebb-plugin-myquickstart",
+  "version": "1.0.0",
+  "description": "Demo plugin for testing different features",
   "main": "library.js",
   "repository": {
     "type": "git",
@@ -30,9 +30,6 @@
     "email": "psycho.bunny@hotmail.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart/issues"
-  },
   "readmeFilename": "README.md",
   "nbbpm": {
     "compatibility": "^1.15.0"
