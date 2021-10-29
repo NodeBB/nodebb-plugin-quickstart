@@ -4,11 +4,12 @@ const nconf = require.main.require('nconf');
 const winston = require.main.require('winston');
 const controllers = require('./lib/controllers');
 
+const routeHelpers = require.main.require('./src/routes/helpers');
+
 const plugin = {};
 
 plugin.init = async (params) => {
 	const { router, middleware/* , controllers */ } = params;
-	const routeHelpers = require.main.require('./src/routes/helpers');
 
 	/**
 	 * We create two routes for every view. One API call, and the actual route itself.
@@ -54,10 +55,11 @@ plugin.init = async (params) => {
  */
 plugin.addRoutes = async ({ router, middleware, helpers }) => {
 	const middlewares = [
-		middleware.authenticateRequest,
-		// middleware.ensureLoggedIn,		// use this if you want only registered users to call this route
+		// middleware.ensureLoggedIn,			// use this if you want only registered users to call this route
+		// middleware.admin.checkPrivileges,	// use this to restrict the route to administrators
 	];
-	router.get('/quickstart/:param1', middlewares, (req, res) => {
+
+	routeHelpers.setupApiRoute(router, 'get', '/quickstart/:param1', middlewares, (req, res) => {
 		helpers.formatApiResponse(200, res, {
 			foobar: req.params.param1,
 		});
