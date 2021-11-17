@@ -38,8 +38,8 @@
     "compatibility": "^1.15.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "14.1.0",
-    "@commitlint/config-angular": "14.1.0",
+    "@commitlint/cli": "15.0.0",
+    "@commitlint/config-angular": "15.0.0",
     "eslint": "8.2.0",
     "eslint-config-nodebb": "0.0.3",
     "eslint-plugin-import": "2.25.3",
