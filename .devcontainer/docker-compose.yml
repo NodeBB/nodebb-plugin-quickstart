@@ -9,12 +9,9 @@ services:
         # Update 'VARIANT' to pick an LTS version of Node.js: 16, 14, 12.
         # Append -bullseye or -buster to pin to an OS version.
         # Use -bullseye variants on local arm64/Apple Silicon.
-        VARIANT: 16-bullseye
-    depends_on:
-      - db
+        VARIANT: 16-buster
     volumes:
       - ..:/workspace:cached
-
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
     network_mode: service:db
 

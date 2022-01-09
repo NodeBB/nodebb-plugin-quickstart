@@ -9,5 +9,8 @@
         "username": "nodebb",
         "password": "nodebb"
     },
-    "port": 4567
+    "port": 4567,
+    "package_manager": "yarn",
+    "admin__username": "admin"
+
 }

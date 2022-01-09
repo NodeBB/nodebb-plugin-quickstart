@@ -1,20 +1,17 @@
-FROM 
-
-
 # [Choice] Node.js version (use -bullseye variants on local arm64/Apple Silicon): 16, 14, 12, 16-bullseye, 14-bullseye, 12-bullseye, 16-buster, 14-buster, 12-buster
-ARG VARIANT=16-bullseye
+ARG VARIANT=16-buster
 FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
+
+USER node
 
 # Install MongoDB command line tools if on buster and x86_64 (arm64 not supported)
 ARG MONGO_TOOLS_VERSION=5.0
-RUN . /etc/os-release \
-    && if [ "${VERSION_CODENAME}" = "buster" ] && [ "$(dpkg --print-architecture)" = "amd64" ]; then \
-    curl -sSL "https://www.mongodb.org/static/pgp/server-${MONGO_TOOLS_VERSION}.asc" | gpg --dearmor > /usr/share/keyrings/mongodb-archive-keyring.gpg \
-    && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/mongodb-archive-keyring.gpg] http://repo.mongodb.org/apt/debian $(lsb_release -cs)/mongodb-org/${MONGO_TOOLS_VERSION} main" | tee /etc/apt/sources.list.d/mongodb-org-${MONGO_TOOLS_VERSION}.list \
-    && apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get install -y mongodb-database-tools mongodb-mongosh \
-    && apt-get clean -y && rm -rf /var/lib/apt/lists/*; \
-    fi
+RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get install gnupg &&\
+    wget -qO - https://www.mongodb.org/static/pgp/server-${MONGO_TOOLS_VERSION}.asc | sudo apt-key add - &&\
+    echo "deb [arch=$(dpkg --print-architecture)] http://repo.mongodb.org/apt/debian $(lsb_release -cs)/mongodb-org/${MONGO_TOOLS_VERSION} main" | sudo tee /etc/apt/sources.list.d/mongodb-org-${MONGO_TOOLS_VERSION}.list &&\
+    sudo apt-get update && export DEBIAN_FRONTEND=noninteractive &&\
+    sudo apt-get install -y mongodb-database-tools mongodb-mongosh &&\
+    sudo apt-get clean -y && sudo rm -rf /var/lib/apt/lists/*;
 
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
@@ -25,9 +22,9 @@ RUN . /etc/os-release \
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
 
 # [Optional] Uncomment if you want to install more global node modules
-RUN su node -c "npm install -g grunt-cli"
+RUN yarn global add grunt-cli
 WORKDIR /opt/nodebb
 RUN git clone https://github.com/NodeBB/NodeBB /opt/nodebb
 COPY ["./config.json", "/opt/nodebb/"]
 
-CMD node ./nodebb setup --skip-build && grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js
+ENTRYPOINT grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js
