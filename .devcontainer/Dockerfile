@@ -27,4 +27,5 @@ WORKDIR /opt/nodebb
 RUN git clone https://github.com/NodeBB/NodeBB /opt/nodebb
 COPY ["./config.json", "/opt/nodebb/"]
 
+CMD grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js
 ENTRYPOINT grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js

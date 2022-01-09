@@ -1,7 +1,7 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  app:
+  nodebb:
     build: 
       context: .
       dockerfile: Dockerfile
@@ -13,15 +13,14 @@ services:
     volumes:
       - ..:/workspace:cached
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    network_mode: service:db
-
+    network_mode: service:mongodb
     # Uncomment the next line to use a non-root user for all processes.
-    user: node
+    # user: node
 
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
-  db:
+  mongodb:
     image: mongo:latest
     restart: unless-stopped
     volumes:
@@ -32,6 +31,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: root
       MONGO_INITDB_DATABASE: nodebb
+
     # Add "forwardPorts": ["27017"] to **devcontainer.json** to forward MongoDB locally.
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 

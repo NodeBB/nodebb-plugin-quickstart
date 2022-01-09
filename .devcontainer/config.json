@@ -10,7 +10,10 @@
         "password": "nodebb"
     },
     "port": 4567,
-    "package_manager": "yarn",
-    "admin__username": "admin"
-
+    "bind_address": "127.0.0.1",
+    "admin": {
+        "email": "nodebb@example.com",
+        "username": "nodebb",
+        "password": "nodebb"
+    }
 }
