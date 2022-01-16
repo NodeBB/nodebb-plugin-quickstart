@@ -25,7 +25,7 @@ RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get
 RUN yarn global add grunt-cli
 WORKDIR /opt/nodebb
 RUN git clone https://github.com/NodeBB/NodeBB /opt/nodebb
-COPY ["./config.json", "/opt/nodebb/"]
+COPY --chown=node:node ["./config.json", "/opt/nodebb/"]
 
 CMD grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js
 ENTRYPOINT grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js
