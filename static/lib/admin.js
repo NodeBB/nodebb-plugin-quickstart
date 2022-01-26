@@ -1,6 +1,6 @@
 'use strict';
 
-define('admin/plugins/quickstart', ['settings', 'uploader'], function (settings, uploader) {
+define('admin/plugins/quickstart', ['settings', 'uploader', 'alerts'], function (settings, uploader, alerts) {
 	var ACP = {};
 
 	ACP.init = function () {
@@ -13,7 +13,7 @@ define('admin/plugins/quickstart', ['settings', 'uploader'], function (settings,
 
 	function saveSettings() {
 		settings.save('quickstart', $('.quickstart-settings'), function () {
-			app.alert({
+			alerts.alert({
 				type: 'success',
 				alert_id: 'quickstart-saved',
 				title: 'Settings Saved',
