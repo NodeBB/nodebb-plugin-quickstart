@@ -1,7 +1,5 @@
 'use strict';
 
-/* globals document, $ */
-
 $(document).ready(function () {
 	/*
 		This file shows how client-side javascript can be included via a plugin.

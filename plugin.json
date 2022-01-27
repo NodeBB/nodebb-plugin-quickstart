@@ -17,7 +17,7 @@
 		"static": "./static"
 	},
 	"less": [
-		"static/style.less"
+		"static/less/quickstart.less"
 	],
 	"scripts": [
 		"static/lib/main.js"
