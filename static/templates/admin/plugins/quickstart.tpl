@@ -48,7 +48,7 @@
 	<div class="row">
 		<div class="col-sm-2 col-xs-12 settings-header">Sorted List</div>
 		<div class="col-sm-10 col-xs-12">
-			<div class="form-group" data-type="sorted-list" data-sorted-list="sample-list" data-item-template="admin/plugins/partials/sorted-list/item" data-form-template="admin/plugins/partials/sorted-list/form">
+			<div class="form-group" data-type="sorted-list" data-sorted-list="sample-list" data-item-template="admin/plugins/quickstart/partials/sorted-list/item" data-form-template="admin/plugins/quickstart/partials/sorted-list/form">
 				<ul data-type="list" class="list-group"></ul>
 				<button type="button" data-type="add" class="btn btn-info">Add Item</button>
 			</div>
