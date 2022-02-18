@@ -23,10 +23,11 @@
 		"static/lib/main.js"
 	],
 	"acpScripts": [
-		"static/lib/admin.js"
+		"static/lib/acp-main.js"
 	],
 	"modules": {
-		"../client/quickstart.js": "./static/lib/quickstart.js"
+		"../client/quickstart.js": "./static/lib/quickstart.js",
+		"../admin/plugins/quickstart.js": "./static/lib/admin.js"
 	},
 	"templates": "static/templates"
 }
