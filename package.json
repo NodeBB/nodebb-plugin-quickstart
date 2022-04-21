@@ -5,7 +5,7 @@
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart"
+    "url": "https://github.com/nodebb/nodebb-plugin-quickstart"
   },
   "keywords": [
     "nodebb",
@@ -25,13 +25,9 @@
       "git add"
     ]
   },
-  "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
-  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart/issues"
+    "url": "https://github.com/nodebb/nodebb-plugin-quickstart/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
