@@ -33,7 +33,7 @@ plugin.init = async (params) => {
  * Define your routes similarly to above, and allow core to handle the response via the
  * built-in helpers.formatApiResponse() method.
  *
- * In this example route, the `authenticate` middleware is added, which means a valid login
+ * In this example route, the `ensureLoggedIn` middleware is added, which means a valid login
  * session or bearer token (which you can create via ACP > Settings > API Access) needs to be
  * passed in.
  *
@@ -55,7 +55,7 @@ plugin.init = async (params) => {
  */
 plugin.addRoutes = async ({ router, middleware, helpers }) => {
 	const middlewares = [
-		// middleware.ensureLoggedIn,			// use this if you want only registered users to call this route
+		middleware.ensureLoggedIn,			// use this if you want only registered users to call this route
 		// middleware.admin.checkPrivileges,	// use this to restrict the route to administrators
 	];
 
