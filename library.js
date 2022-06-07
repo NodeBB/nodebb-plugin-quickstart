@@ -9,7 +9,7 @@ const routeHelpers = require.main.require('./src/routes/helpers');
 const plugin = {};
 
 plugin.init = async (params) => {
-	const { router, middleware/* , controllers */ } = params;
+	const { router /* , middleware , controllers */ } = params;
 
 	/**
 	 * We create two routes for every view. One API call, and the actual route itself.
@@ -17,7 +17,7 @@ plugin.init = async (params) => {
 	 *
 	 * Other helpers include `setupAdminPageRoute` and `setupAPIRoute`
 	 * */
-	routeHelpers.setupPageRoute(router, '/quickstart', middleware, [(req, res, next) => {
+	routeHelpers.setupPageRoute(router, '/quickstart', [(req, res, next) => {
 		winston.info(`[plugins/quickstart] In middleware. This argument can be either a single middleware or an array of middlewares`);
 		setImmediate(next);
 	}], (req, res) => {
@@ -25,7 +25,7 @@ plugin.init = async (params) => {
 		res.render('quickstart', { uid: req.uid });
 	});
 
-	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/quickstart', middleware, [], controllers.renderAdminPage);
+	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/quickstart', [], controllers.renderAdminPage);
 };
 
 /**
