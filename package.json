@@ -5,7 +5,7 @@
   "main": "library.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart"
+    "url": "https://github.com/nodebb/nodebb-plugin-quickstart"
   },
   "keywords": [
     "nodebb",
@@ -25,25 +25,21 @@
       "git add"
     ]
   },
-  "author": {
-    "name": "psychobunny",
-    "email": "psycho.bunny@hotmail.com"
-  },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-plugin-quickstart/issues"
+    "url": "https://github.com/nodebb/nodebb-plugin-quickstart/issues"
   },
   "readmeFilename": "README.md",
   "nbbpm": {
     "compatibility": "^1.15.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "16.0.2",
-    "@commitlint/config-angular": "16.0.0",
-    "eslint": "8.6.0",
+    "@commitlint/cli": "17.0.2",
+    "@commitlint/config-angular": "17.0.0",
+    "eslint": "8.17.0",
     "eslint-config-nodebb": "0.1.1",
-    "eslint-plugin-import": "2.25.4",
-    "husky": "7.0.4",
-    "lint-staged": "12.1.7"
+    "eslint-plugin-import": "2.26.0",
+    "husky": "8.0.1",
+    "lint-staged": "13.0.1"
   }
 }

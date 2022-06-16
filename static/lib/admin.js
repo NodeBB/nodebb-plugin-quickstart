@@ -1,6 +1,13 @@
 'use strict';
 
-define('admin/plugins/quickstart', ['settings', 'uploader'], function (settings, uploader) {
+/*
+	This file is located in the "modules" block of plugin.json
+	It is only loaded when the user navigates to /admin/plugins/quickstart page
+	It is not bundled into the min file that is served on the first load of the page.
+*/
+define('admin/plugins/quickstart', [
+	'settings', 'uploader', 'alerts',
+], function (settings, uploader, alerts) {
 	var ACP = {};
 
 	ACP.init = function () {
@@ -13,7 +20,7 @@ define('admin/plugins/quickstart', ['settings', 'uploader'], function (settings,
 
 	function saveSettings() {
 		settings.save('quickstart', $('.quickstart-settings'), function () {
-			app.alert({
+			alerts.alert({
 				type: 'success',
 				alert_id: 'quickstart-saved',
 				title: 'Settings Saved',
