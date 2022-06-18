@@ -4,7 +4,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/javascript-node:0-${VARIANT}
 
 USER node
 
-# Install MongoDB command line tools if on buster and x86_64 (arm64 not supported)
+# Install MongoDB command line tools
 ARG MONGO_TOOLS_VERSION=5.0
 RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get install gnupg &&\
     wget -qO - https://www.mongodb.org/static/pgp/server-${MONGO_TOOLS_VERSION}.asc | sudo apt-key add - &&\
@@ -21,11 +21,15 @@ RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get
 # ARG EXTRA_NODE_VERSION=10
 # RUN su node -c "source /usr/local/share/nvm/nvm.sh && nvm install ${EXTRA_NODE_VERSION}"
 
-# [Optional] Uncomment if you want to install more global node modules
+# install grunt globally
 RUN yarn global add grunt-cli
+
 WORKDIR /opt/nodebb
 RUN git clone https://github.com/NodeBB/NodeBB /opt/nodebb
 COPY --chown=node:node ["./config.json", "/opt/nodebb/"]
+
+# preemptively copy package.json, since to use yarn nconf will need to be installed before setup
+RUN cp /opt/nodebb/install/package.json /opt/nodebb/package.json
 
 CMD grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js
 ENTRYPOINT grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js

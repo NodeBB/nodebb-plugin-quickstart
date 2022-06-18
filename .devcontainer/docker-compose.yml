@@ -25,6 +25,7 @@ services:
     restart: unless-stopped
     volumes:
       - mongodb-data:/data/db
+      # script that creates the nodebb user in nodebb database
       - ./nodebb-db-init.js:/docker-entrypoint-initdb.d/nodebb-db-init.js
     # Uncomment to change startup options
     environment:
