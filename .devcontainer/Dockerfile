@@ -6,7 +6,7 @@ USER node
 
 # Install MongoDB command line tools
 ARG MONGO_TOOLS_VERSION=5.0
-RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get install gnupg &&\
+RUN sudo apt-get update && export DEBIAN_FRONTEND=noninteractive && sudo apt-get install -y gnupg &&\
     wget -qO - https://www.mongodb.org/static/pgp/server-${MONGO_TOOLS_VERSION}.asc | sudo apt-key add - &&\
     echo "deb [arch=$(dpkg --print-architecture)] http://repo.mongodb.org/apt/debian $(lsb_release -cs)/mongodb-org/${MONGO_TOOLS_VERSION} main" | sudo tee /etc/apt/sources.list.d/mongodb-org-${MONGO_TOOLS_VERSION}.list &&\
     sudo apt-get update && export DEBIAN_FRONTEND=noninteractive &&\
