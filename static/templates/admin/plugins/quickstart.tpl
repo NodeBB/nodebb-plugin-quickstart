@@ -7,19 +7,17 @@
 				<code>meta.settings.get('quickstart', function(err, settings) {...});</code>
 			</p>
 			<div class="mb-3">
-				<label class="form-label" for="setting-1">Setting 1</label>
-				<input type="text" id="setting-1" name="setting-1" title="Setting 1" class="form-control" placeholder="Setting 1">
+				<label class="form-label" for="setting1">Setting 1</label>
+				<input type="text" id="setting1" name="setting1" title="Setting 1" class="form-control" placeholder="Setting 1">
 			</div>
 			<div class="mb-3">
-				<label class="form-label" for="setting-2">Setting 2</label>
-				<input type="text" id="setting-2" name="setting-2" title="Setting 2" class="form-control" placeholder="Setting 2">
+				<label class="form-label" for="setting2">Setting 2</label>
+				<input type="text" id="setting2" name="setting2" title="Setting 2" class="form-control" placeholder="Setting 2">
 			</div>
 
-			<div class="checkbox">
-				<label for="setting-3" class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
-					<input type="checkbox" class="mdl-switch__input" id="setting-3" name="setting-3">
-					<span class="mdl-switch__label"><strong>Setting 3</strong></span>
-				</label>
+			<div class="form-check">
+				<input type="checkbox" class="form-check-input" id="setting3" name="setting3">
+				<label for="setting3" class="form-check-label">Setting 3</label>
 			</div>
 		</div>
 	</div>
@@ -63,6 +61,4 @@
 	</div>
 </form>
 
-<button id="save" class="floating-button mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-	<i class="material-icons">save</i>
-</button>
+<!-- IMPORT admin/partials/save_button.tpl -->

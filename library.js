@@ -2,6 +2,9 @@
 
 const nconf = require.main.require('nconf');
 const winston = require.main.require('winston');
+
+const meta = require.main.require('./src/meta');
+
 const controllers = require('./lib/controllers');
 
 const routeHelpers = require.main.require('./src/routes/helpers');
@@ -10,6 +13,12 @@ const plugin = {};
 
 plugin.init = async (params) => {
 	const { router /* , middleware , controllers */ } = params;
+
+	// Settings saved in the plugin settings can be retrieved via settings methods
+	const { setting1, setting2 } = await meta.settings.get('quickstart');
+	if (setting1) {
+		console.log(setting2);
+	}
 
 	/**
 	 * We create two routes for every view. One API call, and the actual route itself.
