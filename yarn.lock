@@ -866,10 +866,10 @@ eslint-config-airbnb-base@15.0.0:
     object.entries "^1.1.5"
     semver "^6.3.0"
 
-eslint-config-nodebb@0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-0.1.1.tgz#da29bca090442d70a8532cc9e8774ef4651ed000"
-  integrity sha512-+LSX8iYe10fKb6k4JuyMygce7GQMSMsttdgi+BO+v+P3tXXxH//OUnEfZ2cbTungZap9Z8NuK6Tog1wrRQo6CQ==
+eslint-config-nodebb@0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-0.2.1.tgz#c8909839aad0c0e887a0f6f0784231b157af380d"
+  integrity sha512-oElsZTuYW9W99/C+XnqFYqHzveOXaoBNeCUsAKBJff2KDBXCeoPkhOBoaPf3WSJslrfigOAaUtFZNc4KXNhvow==
   dependencies:
     eslint-config-airbnb-base "15.0.0"
 
