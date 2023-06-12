@@ -25,7 +25,7 @@ plugin.init = async (params) => {
 		res.render('quickstart', { uid: req.uid });
 	});
 
-	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/quickstart', [], controllers.renderAdminPage);
+	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/quickstart', controllers.renderAdminPage);
 };
 
 /**
