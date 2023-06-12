@@ -6,8 +6,8 @@
 	It is not bundled into the min file that is served on the first load of the page.
 */
 define('admin/plugins/quickstart', [
-	'settings', 'uploader', 'alerts',
-], function (settings, uploader, alerts) {
+	'settings', 'uploader',
+], function (settings, uploader) {
 	var ACP = {};
 
 	ACP.init = function () {
@@ -19,17 +19,7 @@ define('admin/plugins/quickstart', [
 	};
 
 	function saveSettings() {
-		settings.save('quickstart', $('.quickstart-settings'), function () {
-			alerts.alert({
-				type: 'success',
-				alert_id: 'quickstart-saved',
-				title: 'Settings Saved',
-				message: 'Please reload your NodeBB to apply these settings',
-				clickfn: function () {
-					socket.emit('admin.reload');
-				},
-			});
-		});
+		settings.save('quickstart', $('.quickstart-settings')); // pass in a function in the 3rd parameter to override the default success/failure handler
 	}
 
 	function setupColorInputs() {
