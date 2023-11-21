@@ -34,8 +34,8 @@
     "compatibility": "^3.2.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "18.4.2",
-    "@commitlint/config-angular": "18.4.2",
+    "@commitlint/cli": "18.4.3",
+    "@commitlint/config-angular": "18.4.3",
     "eslint": "8.x",
     "eslint-config-nodebb": "0.2.1",
     "eslint-plugin-import": "2.x",
