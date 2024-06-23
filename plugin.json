@@ -11,17 +11,17 @@
 		"static": "./static"
 	},
 	"scss": [
-		"static/scss/quickstart.scss"
+		"scss/quickstart.scss"
 	],
 	"scripts": [
-		"static/lib/main.js"
+		"public/lib/main.js"
 	],
 	"acpScripts": [
-		"static/lib/acp-main.js"
+		"public/lib/acp-main.js"
 	],
 	"modules": {
-		"../client/quickstart.js": "./static/lib/quickstart.js",
-		"../admin/plugins/quickstart.js": "./static/lib/admin.js"
+		"../client/quickstart.js": "./public/lib/quickstart.js",
+		"../admin/plugins/quickstart.js": "./public/lib/admin.js"
 	},
-	"templates": "static/templates"
+	"templates": "templates"
 }
