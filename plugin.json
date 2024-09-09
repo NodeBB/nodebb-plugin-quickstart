@@ -7,20 +7,7 @@
 		{ "hook": "static:api.routes", "method": "addRoutes" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" }
 	],
-	"staticDirs": {
-		"static": "./static"
-	},
-	"scss": [
-		"scss/quickstart.scss"
-	],
-	"scripts": [
-		"public/lib/main.js"
-	],
-	"acpScripts": [
-		"public/lib/acp-main.js"
-	],
 	"modules": {
-		"../client/quickstart.js": "./public/lib/quickstart.js",
 		"../admin/plugins/quickstart.js": "./public/lib/admin.js"
 	},
 	"templates": "templates"
