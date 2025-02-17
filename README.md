@@ -6,7 +6,7 @@ Fork this or copy it, and using your favourite text editor find and replace all 
 
 ## Hello World
 
-Really simple, just edit `static/lib/main.js` and paste in `console.log('hello world');`, and that's it!
+Really simple, just edit `public/lib/main.js` and paste in `console.log('hello world');`, and that's it!
 
 ## Installation
 
