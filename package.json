@@ -37,7 +37,7 @@
     "@commitlint/cli": "19.8.0",
     "@commitlint/config-angular": "19.8.0",
     "eslint": "9.x",
-    "eslint-config-nodebb": "1.0.7",
+    "eslint-config-nodebb": "1.1.2",
     "eslint-plugin-import": "2.x",
     "husky": "9.1.7",
     "lint-staged": "15.5.1"
