@@ -885,10 +885,10 @@ escape-string-regexp@^4.0.0:
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz#14ba83a5d373e3d311e5afca29cf5bfad965bf34"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
-eslint-config-nodebb@1.1.4:
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-1.1.4.tgz#bff92e51de15e8f8f3de1836cc1575c466b58702"
-  integrity sha512-XNNHnYRcg1/8CpjLneZ+4NX6cq6HEiGyvyGpiYPQ5sYax5Qmg21mO71bBjdsrcbB1if4UyF7pYOkOKnK+ZyONg==
+eslint-config-nodebb@1.1.5:
+  version "1.1.5"
+  resolved "https://registry.yarnpkg.com/eslint-config-nodebb/-/eslint-config-nodebb-1.1.5.tgz#090cf7be59894238a3fd02bab5a9f1aed78ce28b"
+  integrity sha512-TtpmU/3rS9EWYBuwSZwiC3S4kITZIrnsAQTxwa8+0na1nG3ya6YSKseZ6gynoO9h7hqUYedqr9fu7ho8FfQtCQ==
 
 eslint-import-resolver-node@^0.3.9:
   version "0.3.9"
