@@ -9,8 +9,8 @@ $(document).ready(function () {
 
 		Some events you can elect to listen for:
 
-		$(document).ready();			Fired when the DOM is ready
-		$(window).on('action:ajaxify.end', function(data) { ... });			"data" contains "url"
+		$(document).ready(); Fired when the DOM is ready
+		$(window).on('action:ajaxify.end', function(data) { ... }); "data" contains "url"
 	*/
 
 	console.log('nodebb-plugin-quickstart: acp-loaded');

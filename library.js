@@ -48,24 +48,24 @@ plugin.init = async (params) => {
  *
  * To call this example route:
  *   curl -X GET \
- * 		http://example.org/api/v3/plugins/quickstart/test \
- * 		-H "Authorization: Bearer some_valid_bearer_token"
+ *     http://example.org/api/v3/plugins/quickstart/test \
+ *     -H "Authorization: Bearer some_valid_bearer_token"
  *
  * Will yield the following response JSON:
- * 	{
- *		"status": {
- *			"code": "ok",
- *			"message": "OK"
- *		},
- *		"response": {
- *			"foobar": "test"
- *		}
- *	}
+ * {
+ *  "status": {
+ *    "code": "ok",
+ *    "message": "OK"
+ *  },
+ *  "response": {
+ *    "foobar": "test"
+ *  }
+ * }
  */
 plugin.addRoutes = async ({ router, middleware, helpers }) => {
 	const middlewares = [
-		middleware.ensureLoggedIn,			// use this if you want only registered users to call this route
-		// middleware.admin.checkPrivileges,	// use this to restrict the route to administrators
+		middleware.ensureLoggedIn, // use this if you want only registered users to call this route
+		// middleware.admin.checkPrivileges, // use this to restrict the route to administrators
 	];
 
 	routeHelpers.setupApiRoute(router, 'get', '/quickstart/:param1', middlewares, (req, res) => {

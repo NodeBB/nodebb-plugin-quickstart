@@ -15,7 +15,7 @@
 
 	hooks.on('action:app.load', () => {
 		// called once when nbb has loaded
-	})
+	});
 
 	hooks.on('action:ajaxify.end', (/* data */) => {
 		// called everytime user navigates between pages including first load

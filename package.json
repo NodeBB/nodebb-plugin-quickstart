@@ -7,6 +7,9 @@
     "type": "git",
     "url": "https://github.com/nodebb/nodebb-plugin-quickstart"
   },
+  "scripts": {
+    "lint": "eslint ."
+  },
   "keywords": [
     "nodebb",
     "plugin",
@@ -36,9 +39,8 @@
   "devDependencies": {
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-angular": "19.8.1",
-    "eslint": "9.x",
+    "eslint": "9.28.0",
     "eslint-config-nodebb": "1.1.6",
-    "eslint-plugin-import": "2.x",
     "husky": "9.1.7",
     "lint-staged": "16.1.0"
   }
