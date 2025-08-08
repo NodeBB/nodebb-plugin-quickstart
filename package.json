@@ -42,6 +42,6 @@
     "eslint": "9.32.0",
     "eslint-config-nodebb": "1.1.10",
     "husky": "9.1.7",
-    "lint-staged": "16.1.4"
+    "lint-staged": "16.1.5"
   }
 }
