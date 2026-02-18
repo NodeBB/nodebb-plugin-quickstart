@@ -23,5 +23,6 @@
 		"../client/quickstart.js": "./public/lib/quickstart.js",
 		"../admin/plugins/quickstart.js": "./public/lib/admin.js"
 	},
-	"templates": "templates"
+	"templates": "templates",
+	"languages": "languages"
 }
