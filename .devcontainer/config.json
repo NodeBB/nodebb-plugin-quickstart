@@ -1,0 +1,20 @@
+{
+    "url": "http://127.0.0.1:4567",
+    "secret": "development-value-do-not-use-in-production",
+    "database": "mongo",
+    "mongo": {
+        "host": "127.0.0.1",
+        "port": 27017,
+        "database": "nodebb",
+        "username": "nodebb",
+        "password": "nodebb"
+    },
+    "port": 4567,
+    "bind_address": "127.0.0.1",
+    "admin": {
+        "email": "nodebb@example.com",
+        "username": "nodebb",
+        "password": "nodebb"
+    },
+    "package_manager": "yarn"
+}
