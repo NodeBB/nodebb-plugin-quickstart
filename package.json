@@ -39,7 +39,7 @@
   "devDependencies": {
     "@commitlint/cli": "21.1.0",
     "@commitlint/config-angular": "21.1.0",
-    "eslint": "10.5.0",
+    "eslint": "10.6.0",
     "eslint-config-nodebb": "2.0.3",
     "husky": "9.1.7",
     "lint-staged": "17.0.8"
