@@ -6,5 +6,10 @@ import publicConfig from 'eslint-config-nodebb/public';
 export default [
 	...publicConfig,
 	...serverConfig,
+	{
+		languageOptions: {
+			sourceType: 'module',
+	  	},
+	}
 ];
 

@@ -25,7 +25,7 @@ function handleSettingsForm() {
 }
 
 function setupColorInputs() {
-	var colorInputs = $('[data-settings="colorpicker"]');
+	const colorInputs = $('[data-settings="colorpicker"]');
 	colorInputs.on('change', updateColors);
 	updateColors();
 }
@@ -39,7 +39,7 @@ function updateColors() {
 
 function setupUploader() {
 	$('#content input[data-action="upload"]').each(function () {
-		var uploadBtn = $(this);
+		const uploadBtn = $(this);
 		uploadBtn.on('click', function () {
 			uploader.show({
 				route: config.relative_path + '/api/admin/upload/file',

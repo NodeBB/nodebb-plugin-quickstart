@@ -3,6 +3,7 @@
   "version": "0.4.3",
   "description": "A starter kit for quickly creating NodeBB plugins",
   "main": "library.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/nodebb/nodebb-plugin-quickstart"
@@ -34,7 +35,7 @@
   },
   "readmeFilename": "README.md",
   "nbbpm": {
-    "compatibility": "^3.2.0"
+    "compatibility": "^4.14.0"
   },
   "devDependencies": {
     "@commitlint/cli": "21.2.0",

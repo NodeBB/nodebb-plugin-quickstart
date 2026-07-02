@@ -1,17 +1,12 @@
-'use strict';
+import * as controllers from './lib/controllers.js';
 
-const nconf = require.main.require('nconf');
-const winston = require.main.require('winston');
+const nconf = nodebb.require('nconf');
+const winston = nodebb.require('winston');
+const meta = nodebb.require('./src/meta');
+const routeHelpers = nodebb.require('./src/routes/helpers');
 
-const meta = require.main.require('./src/meta');
 
-const controllers = require('./lib/controllers');
-
-const routeHelpers = require.main.require('./src/routes/helpers');
-
-const plugin = {};
-
-plugin.init = async (params) => {
+export async function init(params) {
 	const { router /* , middleware , controllers */ } = params;
 
 	// Settings saved in the plugin settings can be retrieved via settings methods
@@ -62,7 +57,7 @@ plugin.init = async (params) => {
  *  }
  * }
  */
-plugin.addRoutes = async ({ router, middleware, helpers }) => {
+export async function addRoutes({ router, middleware, helpers }) {
 	const middlewares = [
 		middleware.ensureLoggedIn, // use this if you want only registered users to call this route
 		// middleware.admin.checkPrivileges, // use this to restrict the route to administrators
@@ -75,7 +70,7 @@ plugin.addRoutes = async ({ router, middleware, helpers }) => {
 	});
 };
 
-plugin.addAdminNavigation = (header) => {
+export function addAdminNavigation(header) {
 	header.plugins.push({
 		route: '/plugins/quickstart',
 		icon: 'fa-tint',
@@ -85,4 +80,3 @@ plugin.addAdminNavigation = (header) => {
 	return header;
 };
 
-module.exports = plugin;
