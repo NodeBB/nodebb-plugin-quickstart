@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.208.0/containers/javascript-node-mongo
+// Update the VARIANT arg in docker-compose.yml to pick a Node.js version
+{
+	"name": "NodeBB plugin",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "nodebb",
+	"workspaceFolder": "/workspace",
+	// Set *default* container specific settings.json values on container create.
+	"settings": {},
+	// Eslint extension is here since it integrates with the quickstart config
+	// MongoDB extension can be a useful alternative to `mongosh` for debugging
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"mongodb.mongodb-vscode"
+	],
+	// Exposes NodeBB and MongoDB ports locally with labels
+	"forwardPorts": [
+		4567,
+		27017
+	],
+	"portsAttributes": {
+		"4567": {
+			"label": "NodeBB",
+			// show a notification when NodeBB is ready, useful since it can take a bit to set up
+			"onAutoForward": "notify"
+		},
+		"27017": {
+			"label": "MongoDB",
+			"onAutoForward": "silent"
+		}
+	},
+	// Install and setup NodeBB on workspace creation to speed up the setup.
+	// The build happens on startup anyway, so it can be skipped here
+	"onCreateCommand": "cd /opt/nodebb && yarn install && node /opt/nodebb/nodebb setup --skip-build",
+	"updateContentCommand": "yarn install && yarn link && npm_name=$(node -p \"require('./package.json').name\") && cd /opt/nodebb && yarn link $npm_name && /opt/nodebb/nodebb activate $npm_name",
+	// prepare the plugin and link it to NodeBB, then start NodeBB using grunt so it rebuilds on changes
+	"postStartCommand": "yarn install && yarn link && npm_name=$(node -p \"require('./package.json').name\") && cd /opt/nodebb && yarn link $npm_name && /opt/nodebb/nodebb activate $npm_name && grunt -b /opt/nodebb --gruntfile /opt/nodebb/Gruntfile.js > /opt/nodebb/logs/output.log",
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "node",
+	"overrideCommand": true
+}
