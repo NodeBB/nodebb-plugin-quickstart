@@ -1,7 +1,6 @@
 {
 	"id": "nodebb-plugin-quickstart",
 	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
-	"library": "./library.js",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "static:api.routes", "method": "addRoutes" },
@@ -14,14 +13,14 @@
 		"scss/quickstart.scss"
 	],
 	"scripts": [
-		"public/lib/main.js"
+		"build/public/lib/main.js"
 	],
 	"acpScripts": [
-		"public/lib/acp-main.js"
+		"build/public/lib/acp-main.js"
 	],
 	"modules": {
-		"../client/quickstart.js": "./public/lib/quickstart.js",
-		"../admin/plugins/quickstart.js": "./public/lib/admin.js"
+		"../client/quickstart.js": "./build/public/lib/quickstart.js",
+		"../admin/plugins/quickstart.js": "./build/public/lib/admin.js"
 	},
 	"templates": "templates",
 	"languages": "languages"

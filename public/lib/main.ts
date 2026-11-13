@@ -10,8 +10,12 @@
  * This one below executes when NodeBB reports it is ready...
  */
 
+interface HooksModule {
+	on: <T>(hookName: string, method: T) => void;
+}
+
 (async () => {
-	const hooks = await app.require('hooks');
+	const hooks = await app.require<HooksModule>('hooks');
 
 	hooks.on('action:app.load', () => {
 		// called once when nbb has loaded

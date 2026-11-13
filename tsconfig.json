@@ -1,0 +1,20 @@
+{
+	"include": [
+		"public/lib/**/*",
+		"lib/**/*",
+		"library.ts",
+		"nodebb.d.ts",
+		"modules.d.ts",
+	],
+	"compilerOptions": {
+		"types": ["jquery"],
+		"allowJs": true,
+		"checkJs": false,
+		"rootDir": ".",
+		"outDir": "build",
+		"sourceMap": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"allowUmdGlobalAccess": true,
+	}
+}

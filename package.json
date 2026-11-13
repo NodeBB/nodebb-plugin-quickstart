@@ -2,14 +2,16 @@
   "name": "nodebb-plugin-quickstart",
   "version": "0.4.3",
   "description": "A starter kit for quickly creating NodeBB plugins",
-  "main": "library.js",
+  "main": "build/library.js",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/nodebb/nodebb-plugin-quickstart"
   },
   "scripts": {
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "nodebb",
@@ -24,7 +26,7 @@
     }
   },
   "lint-staged": {
-    "*.js": [
+    "*.ts": [
       "eslint --fix",
       "git add"
     ]
@@ -40,9 +42,16 @@
   "devDependencies": {
     "@commitlint/cli": "21.2.4",
     "@commitlint/config-angular": "21.2.4",
+    "@types/express": "^4.17.25",
+    "@types/jquery": "^3.5.34",
+    "@types/nconf": "^0.10.7",
+    "@types/node": "^26.6.6",
     "eslint": "10.14.0",
     "eslint-config-nodebb": "2.0.3",
     "husky": "9.1.7",
-    "lint-staged": "17.6.0"
+    "lint-staged": "17.6.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.2",
+    "winston": "^3.19.0"
   }
 }

@@ -32,8 +32,8 @@ function setupColorInputs() {
 
 function updateColors() {
 	$('#preview').css({
-		color: $('#color').val(),
-		'background-color': $('#bgColor').val(),
+		color: $('#color').val() as string,
+		'background-color': $('#bgColor').val() as string,
 	});
 }
 
