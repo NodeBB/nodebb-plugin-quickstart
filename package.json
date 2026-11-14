@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-quickstart-ts",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "A starter kit for quickly creating NodeBB plugins",
   "main": "build/library.js",
   "type": "module",
