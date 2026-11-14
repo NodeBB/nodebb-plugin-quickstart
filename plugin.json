@@ -1,5 +1,5 @@
 {
-	"id": "nodebb-plugin-quickstart",
+	"id": "nodebb-plugin-quickstart-ts",
 	"url": "https://github.com/NodeBB/nodebb-plugin-quickstart",
 	"hooks": [
 		{ "hook": "static:app.load", "method": "init" },

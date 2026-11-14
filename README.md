@@ -1,4 +1,4 @@
-# Quickstart Plugin for NodeBB
+# Quickstart Plugin for NodeBB (Typescript)
 
 A starter kit for quickly creating NodeBB plugins. Comes with a pre-setup SCSS file, server side JS script with an `static:app.load` hook, and a client-side script. Most plugins need at least one of the above, so this ought to save you some time. For a full list of hooks have a look at our [wiki page](https://github.com/NodeBB/NodeBB/wiki/Hooks), and for more information about creating plugins please visit our [documentation portal](https://docs.nodebb.org/).
 
@@ -10,7 +10,7 @@ Really simple, just edit `public/lib/main.js` and paste in `console.log('hello w
 
 ## Installation
 
-    npm install nodebb-plugin-quickstart
+    npm install nodebb-plugin-quickstart-ts
 
 ## Screenshots
 
