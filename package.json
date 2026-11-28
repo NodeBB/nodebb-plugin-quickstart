@@ -46,7 +46,7 @@
     "@types/jquery": "^3.5.34",
     "@types/nconf": "^0.10.7",
     "@types/node": "^26.6.6",
-    "eslint": "10.15.0",
+    "eslint": "10.16.0",
     "eslint-config-nodebb": "2.0.7",
     "husky": "9.1.7",
     "lint-staged": "17.6.2",
