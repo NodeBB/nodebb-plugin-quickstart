@@ -50,7 +50,7 @@
     "eslint-config-nodebb": "2.0.7",
     "husky": "9.1.7",
     "lint-staged": "17.6.3",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "typescript-eslint": "^8.72.2",
     "winston": "^3.19.0"
   }
